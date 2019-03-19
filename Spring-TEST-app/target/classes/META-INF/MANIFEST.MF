@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: lbiel
+Build-Jdk: 11.0.1
+Implementation-Title: Spring-TEST-app
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: pl.javastart
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/Spring-TEST-app
+Created-By: Maven Integration for Eclipse
+
