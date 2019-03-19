@@ -31,17 +31,17 @@ public class DeleteController {
 				personRepo.deleteById(id);
 				return "success";
 			}else {
-				return "redirect:sorry1";
+				return "error";
 			}
 		}
-		return "redirect:sorry1";
+		return "error";
 			
 	}
 	
-	@GetMapping("/sorry1")
-    public String error() {
-        return "errorMessage";
-    }
+	@GetMapping("/error")
+	public String error() {
+		return "Error";
+	}
 	
 	private boolean checkNotEmpty(Long id) {
         return (id!=null && id > 0);

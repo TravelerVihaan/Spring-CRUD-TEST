@@ -33,14 +33,9 @@ public class AddController {
 			personRepo.save(person);
 			return "success";
 		}else {
-			return "redirect:sorry";
+			return "error";
 		}
 	}
-	
-	@GetMapping("/sorry")
-    public String error() {
-        return "errorMessage";
-    }
 	
 	 private boolean checkNotEmpty(String title, String content) {
 	        return (title!=null && title.length()>0)
