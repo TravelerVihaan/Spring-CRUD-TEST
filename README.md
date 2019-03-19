@@ -1,2 +1,2 @@
 # Spring-CRUD-TEST
-My first Spring CRUD test app
+My first CRUD Spring app testing operations on Database
