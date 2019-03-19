@@ -40,7 +40,7 @@ public class DeleteController {
 	
 	@GetMapping("/error")
 	public String error() {
-		return "Error";
+		return "error";
 	}
 	
 	private boolean checkNotEmpty(Long id) {
