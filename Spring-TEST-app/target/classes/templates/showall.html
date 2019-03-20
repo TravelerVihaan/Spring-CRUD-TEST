@@ -5,6 +5,12 @@
 <title>All results</title>
 </head>
 <body>
+	Show specific
+	<form action="showpost" method="post">
+	<input type="number" name="id" placeholder="ID"/>
+	<input type="submit" value="Filter"/>
+	</form>
+
     <div th:if="not ${list.isEmpty()}">
         <h1>All registered times:</h1>
         <table border="1">
