@@ -19,6 +19,7 @@
                 <th>Last Name</th>
             </tr>
             <tr th:each="Person: ${list}" th:object="${Person}">
+            	<td th:text="*{id}">1</td>
                 <td th:text="*{name}">John</td>
                 <td th:text="*{surname}">Kowalski</td>
             </tr>
