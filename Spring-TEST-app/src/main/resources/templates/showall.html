@@ -8,20 +8,27 @@
 	Show specific
 	<form action="show" method="post">
 	<input type="number" name="id" placeholder="ID"/>
+	<input type="text" name="name" placeholder="Name"/>
 	<input type="submit" value="Filter"/>
 	</form>
 
     <div th:if="not ${list.isEmpty()}">
-        <h1>All registered times:</h1>
+        <h1>All registered users:</h1>
         <table border="1">
             <tr>
+            	<th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>City</th>
+                <th>Country</th>
             </tr>
             <tr th:each="Person: ${list}" th:object="${Person}">
             	<td th:text="*{id}">1</td>
                 <td th:text="*{name}">John</td>
                 <td th:text="*{surname}">Kowalski</td>
+                <td th:text="*{personDetails.city}">Miasto</td>
+                <td th:text="*{personDetails.country}">Panstwo</td>
+                
             </tr>
         </table>
     </div>

@@ -26,12 +26,15 @@ public class ListController {
 	}
 	
 	@RequestMapping(value = "/show", method = {RequestMethod.GET, RequestMethod.POST})
-	public String fullList(@RequestParam(required = false) Long id, Model model) {
+	public String fullList(@RequestParam(required = false) Long id,@RequestParam(required = false) String name, Model model) {
 			List<Person> list = new ArrayList<Person>();
 		if(id!=null) {
 			Person person = personRepo.findById(id).get();
 			list.add(person);
-		}else {
+		}else if(name!=null && name.length()>0){
+			Person person = personRepo.findByName(name);
+			list.add(person);
+		}else{
 			//List<Person> list = new ArrayList<Person>();
 			list = (List<Person>) personRepo.findAll();
 		}
