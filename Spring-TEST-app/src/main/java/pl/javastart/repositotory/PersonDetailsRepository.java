@@ -6,5 +6,4 @@ import org.springframework.data.repository.CrudRepository;
 import pl.javastart.model.PersonDetails;
 
 public interface PersonDetailsRepository extends JpaRepository<PersonDetails,Long>{
-
 }

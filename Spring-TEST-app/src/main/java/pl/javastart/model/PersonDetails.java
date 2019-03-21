@@ -16,7 +16,9 @@ public class PersonDetails {
 	@Column(name="id_details")
 	private Long id;
 	
+	@Column(nullable = true)
 	private String country;
+	@Column(nullable = true)
 	private String city;
 	
 	PersonDetails(){}

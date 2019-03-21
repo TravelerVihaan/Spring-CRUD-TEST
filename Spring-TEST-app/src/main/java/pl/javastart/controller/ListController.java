@@ -32,13 +32,21 @@ public class ListController {
 			Person person = personRepo.findById(id).get();
 			list.add(person);
 		}else if(name!=null && name.length()>0){
-			Person person = personRepo.findByName(name);
-			list.add(person);
+			//Person person = personRepo.findByName(name);
+			list = personRepo.findAllByName(name);
 		}else{
 			//List<Person> list = new ArrayList<Person>();
 			list = (List<Person>) personRepo.findAll();
 		}
 		model.addAttribute("list",list);
+		return "showall";
+	}
+	
+	@GetMapping("/showpl")
+	public String polandList(Model model) {
+		List<Person> list = new ArrayList<Person>();
+		//list = personRepo.findAllFromPoland();
+		model.addAttribute("list", list);
 		return "showall";
 	}
 	

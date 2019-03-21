@@ -1,6 +1,7 @@
 package pl.javastart.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +31,7 @@ public class Person {
 	public Person(String name, String surname) {
 		this.name = name;
 		this.surname = surname;
+		this.personDetails = new PersonDetails("","");
 	}
 	
 	public Long getId() {

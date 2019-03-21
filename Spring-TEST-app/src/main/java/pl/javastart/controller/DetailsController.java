@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.javastart.model.Person;
 import pl.javastart.model.PersonDetails;
-import pl.javastart.repositotory.PersonDetailsRepository;
+//import pl.javastart.repositotory.PersonDetailsRepository;
 import pl.javastart.repositotory.PersonRepository;
 
 @Controller
 public class DetailsController {
 	
 	private PersonRepository personRepo;
-	private PersonDetailsRepository detailsRepo;
+	//private PersonDetailsRepository detailsRepo;
 	
 	@Autowired
 	public DetailsController(PersonRepository personRepo) {
@@ -34,8 +34,12 @@ public class DetailsController {
 		if(checkNotEmpty(id)) {
 			if(!personRepo.findById(id).isEmpty()) {
 				Person person = personRepo.findById(id).get();
-				PersonDetails personDet = new PersonDetails(city,country);
+				//PersonDetails personDet = new PersonDetails(city,country);
+				PersonDetails personDet = personRepo.findById(id).get().getPersonDetails();
+				personDet.setCity(city);
+				personDet.setCountry(country);
 				person.setPersonDetails(personDet);
+				//detailsRepo.save(personDet);
 				//detailsRepo.save(personDet);
 				personRepo.save(person);
 				return "success";
