@@ -14,6 +14,8 @@ public class DeleteController {
 	
 	private PersonRepository personRepo;
 	
+	//TODO usuwanie persondetails
+	
 	@Autowired
 	public DeleteController(PersonRepository personRepo) {
 		this.personRepo = personRepo;

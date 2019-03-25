@@ -23,7 +23,8 @@ public class Person {
 	private String name;
 	@NotNull
 	private String surname;
-	@OneToOne(cascade = CascadeType.PERSIST)
+	// TODO przetestowac cascadetype remove i merge
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name = "id_details")
 	private PersonDetails personDetails;
 	
